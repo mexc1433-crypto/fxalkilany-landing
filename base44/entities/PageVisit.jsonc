@@ -1,0 +1,37 @@
+{
+  "name": "PageVisit",
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier per visit"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "default": 0,
+      "description": "Time the visitor spent on the landing page in seconds"
+    },
+    "clicked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the visitor clicked to open the channel"
+    }
+  },
+  "required": [
+    "session_id"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {},
+    "update": {},
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
